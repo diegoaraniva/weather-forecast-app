@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ForecastService } from '../../services/forecast.service';
-import { ownFormatDate } from '../../Helpers/formatDate';
+import { ownFormatDate } from '../../helpers/formatDate';
 
 @Component({
   selector: 'app-forecast',
@@ -27,4 +27,9 @@ export class ForecastComponent {
       }
     );
   }
+
+  formatNewDate(date: any){
+    return ownFormatDate.fromDateToDescription(date);
+  }
+
 }

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-dock',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './dock.component.html',
   styleUrl: './dock.component.css'
 })
@@ -22,7 +23,7 @@ export class DockComponent {
   }
 
   isComponentActive(routeSubString: string): boolean{
-    return this.currentRoute.includes(routeSubString);
+    return this.currentRoute === routeSubString;
   }
   
 }
