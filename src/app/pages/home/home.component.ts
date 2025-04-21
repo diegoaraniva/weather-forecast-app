@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { WeatherViewModel } from '../../viewmodels/weatherViewModel';
 import { CommonModule } from '@angular/common';
+import { ownFormatDate } from '../../Helpers/formatDate';
 
 @Component({
   selector: 'app-home',
@@ -23,18 +24,7 @@ export class HomeComponent {
         this.weatherViewModel = data;
         console.log(data);
 
-        const creationDate = new Date(this.weatherViewModel.creationDate);
-
-        const opciones: Intl.DateTimeFormatOptions = {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        };
-
-        this.newDate = new Intl.DateTimeFormat('en-US', opciones)
-          .format(creationDate)
-          .replace(',', '');
+        this.newDate = ownFormatDate.fromDateToDescription(this.weatherViewModel.creationDate);
       },
       error => {
         console.error('Weather service unavailable:', error);
