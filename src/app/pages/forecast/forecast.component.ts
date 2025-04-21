@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ForecastService } from '../../services/forecast.service';
-import { ownFormatDate } from '../../helpers/formatDate';
+import { ownFormatDate } from '../../helpersClasses/formatDate';
 
 @Component({
   selector: 'app-forecast',

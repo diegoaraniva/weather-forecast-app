@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { WeatherViewModel } from '../../viewmodels/weatherViewModel';
 import { CommonModule } from '@angular/common';
-import { ownFormatDate } from '../../helpers/formatDate';
+import { ownFormatDate } from '../../helpersClasses/formatDate';
 
 @Component({
   selector: 'app-home',
