@@ -1,7 +1,7 @@
-export class WeatherViewModel {
+export class ForecastViewModel {
     constructor(
-      public location: string,
-      public timestamp: number,
+      public cityName: string,
+      public forecastTime: Date = new Date(),
       public temperature: number,
       public feelsLike: number,
       public tempMin: number,
@@ -14,8 +14,6 @@ export class WeatherViewModel {
       public cloudiness: number,
       public icon: string,
       public creationDate: Date = new Date(),
-      public lastUpdate: Date = new Date(),
-
-      public formatedDate: string
+      public lastUpdate: Date = new Date()
     ) {}
 }

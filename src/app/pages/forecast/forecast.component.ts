@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ForecastService } from '../../services/forecast.service';
-import { ownFormatDate } from '../../helpersClasses/formatDate';
+import { ownFormatDate } from '../../helpers/formatDate';
+import { ForecastViewModel } from '../../viewmodels/forecastViewModel';
 
 @Component({
   selector: 'app-forecast',
@@ -11,7 +12,7 @@ import { ownFormatDate } from '../../helpersClasses/formatDate';
   styleUrl: './forecast.component.css',
 })
 export class ForecastComponent {
-  viewModel: any
+  forecasViewModel!: ForecastViewModel[]
 
   constructor(private forecastService: ForecastService) {}
 
@@ -19,7 +20,7 @@ export class ForecastComponent {
 
     this.forecastService.getForecast().subscribe(
       data => {
-        this.viewModel = data;
+        this.forecasViewModel = data;
         console.log(data);
       },
       error => {

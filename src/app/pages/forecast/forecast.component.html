@@ -1,33 +1,33 @@
 <div class="bg-base-300 min-h-screen w-full">
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 place-items-center">
-    <div *ngFor="let viewMode of viewModel" class="card grid mt-10 mb-30 bg-base-200 max-w-sm w-full shadow-sm">
+    <div *ngFor="let forecast of forecasViewModel" class="card grid mt-10 mb-30 bg-base-200 max-w-sm w-full shadow-sm">
       <div class="card-body">
-        <h2 class="card-title">{{ viewMode.cityName }}</h2>
-        <p class="card-body">{{ formatNewDate(viewMode.forecastTime) }}</p>
+        <h2 class="card-title">{{ forecast.cityName }}</h2>
+        <p class="card-body">{{ formatNewDate(forecast.forecastTime) }}</p>
         <div class="stats stats-vertical shadow">
             <div class="stat">
                 <div class="stat-title">Weather</div>
-                <div class="stat-value">{{ viewMode.weatherMain }}</div>
+                <div class="stat-value">{{ forecast.weatherMain }}</div>
             </div>
             <div class="stat">
               <div class="stat-title">Min° | Max°</div>
-              <div class="stat-value">{{ viewMode.tempMin }}K° | {{ viewMode.tempMax }}K°</div>
+              <div class="stat-value">{{ forecast.tempMin }}K° | {{ forecast.tempMax }}K°</div>
           </div>
             <div class="stat">
                 <div class="stat-title">Temperature</div>
-                <div class="stat-value">{{ viewMode.temperature }} K°</div>
+                <div class="stat-value">{{ forecast.temperature }} K°</div>
             </div>
             <div class="stat">
                 <div class="stat-title">Pressure</div>
-                <div class="stat-value">{{ viewMode.pressure }}</div>
+                <div class="stat-value">{{ forecast.pressure }}</div>
             </div>
             <div class="stat">
                 <div class="stat-title">Humidity</div>
-                <div class="stat-value">{{ viewMode.humidity }}</div>
+                <div class="stat-value">{{ forecast.humidity }}</div>
             </div>
         </div>
         <figure>
-          <img src="https://openweathermap.org/img/wn/{{viewMode.icon}}@2x.png" alt="Weather icon" />
+          <img src="https://openweathermap.org/img/wn/{{forecast.icon}}@2x.png" alt="Weather icon" />
         </figure>
       </div>
     </div>

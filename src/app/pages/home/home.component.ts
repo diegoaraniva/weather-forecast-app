@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { WeatherViewModel } from '../../viewmodels/weatherViewModel';
 import { CommonModule } from '@angular/common';
-import { ownFormatDate } from '../../helpersClasses/formatDate';
+import { ownFormatDate } from '../../helpers/formatDate';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +14,6 @@ import { ownFormatDate } from '../../helpersClasses/formatDate';
 export class HomeComponent {
   weatherViewModel!: WeatherViewModel;
 
-  newDate : string = "";
-
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
@@ -24,7 +22,7 @@ export class HomeComponent {
         this.weatherViewModel = data;
         console.log(data);
 
-        this.newDate = ownFormatDate.fromDateToDescription(this.weatherViewModel.creationDate);
+        this.weatherViewModel.formatedDate = ownFormatDate.fromDateToDescription(this.weatherViewModel.creationDate);
       },
       error => {
         console.error('Weather service unavailable:', error);

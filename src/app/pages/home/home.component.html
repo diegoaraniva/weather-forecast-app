@@ -3,7 +3,7 @@
         <div *ngIf="weatherViewModel" class="card mt-10 mb-30 bg-base-200 max-w-sm w-full shadow-sm">
             <div class="card-body">
                 <h2 class="card-title">{{ weatherViewModel.location }}</h2>
-                <p class="card-body">{{ newDate }}</p>
+                <p class="card-body">{{ weatherViewModel.formatedDate }}</p>
                 <div class="stats stats-vertical shadow">
                     <div class="stat">
                         <div class="stat-title">Weather</div>
